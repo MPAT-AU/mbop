@@ -41,20 +41,17 @@ class MBOP
 </body>';
     }
 
-    
     function template()
     {
-        $url_path = trim(parse_url(add_query_arg(array()), PHP_URL_PATH), '/');
-        if ($url_path === 'mbop') {
-            echo '<html>
-';
+        $url_path = trim($_SERVER['REQUEST_URI'], '/');
+        if (substr($url_path,-4) === 'mbop' ) {
+            echo "<html>\n";
             do_shortcode('[mbop_remover]');
-            echo '
-</html>';
+            echo "</html>\n";
             exit();
         }
-    }
-    
+    }    
+
     function head()
     {
         echo '<meta http-equiv="refresh" content="'.$this->rt.'">';
