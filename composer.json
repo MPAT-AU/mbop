@@ -1,0 +1,17 @@
+
+{
+    "name" : "MPAT-eu/mbop",
+    "description" : "This will remove the 'meta-box-order_page' value for user which is generated when having opened a page.",
+    "version" : "1.0.0",
+    "license" : "MIT",
+    "authors" : [{
+            "name" : "Jean-Philippe Ruijs",
+            "email" : "jean-philippe.ruijs@imt.fr"
+        }
+    ],
+    "type" : "wordpress-plugin",
+    "require": {
+        "php": ">=5.5",
+        "composer/installers": "~1.0.12"
+    }
+}
