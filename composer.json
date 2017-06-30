@@ -1,5 +1,5 @@
 {
-    "name" : "meta-post-order",
+    "name" : "meta-box-order_page",
     "description" : "WordPress meta-box cleaner, This will remove the 'meta-box-order_page' value for user which is generated when having opened a page. Accessible via http://[wproot]/mbop",
     "version" : "1.0.0",
     "license" : "GPL2",
