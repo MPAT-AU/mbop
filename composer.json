@@ -1,17 +1,18 @@
-
 {
-    "name" : "MPAT-eu/mbop",
-    "description" : "This will remove the 'meta-box-order_page' value for user which is generated when having opened a page.",
+    "name" : "meta-post-order",
+    "description" : "WordPress meta-box cleaner, This will remove the 'meta-box-order_page' value for user which is generated when having opened a page. Accessible via http://[wproot]/mbop",
     "version" : "1.0.0",
-    "license" : "MIT",
+    "license" : "GPL2",
     "authors" : [{
-            "name" : "Jean-Philippe Ruijs",
-            "email" : "jean-philippe.ruijs@imt.fr"
+        "name" : "Jean-Philippe Ruijs",
+        "email" : "jean-philippe.ruijs@imt.fr"
+    }
+    ],
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "git@github.com:MPAT-eu/mbob.git"
         }
     ],
-    "type" : "wordpress-plugin",
-    "require": {
-        "php": ">=5.5",
-        "composer/installers": "~1.0.12"
-    }
+    "type" : "wordpress-plugin"
 }
