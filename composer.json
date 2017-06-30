@@ -11,7 +11,7 @@
     "repositories" : [
         {
             "type" : "vcs",
-            "url" : "git@github.com:MPAT-eu/mbob.git"
+            "url" : "git@github.com:MPAT-eu/mbop.git"
         }
     ],
     "type" : "wordpress-plugin"
