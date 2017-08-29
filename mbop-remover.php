@@ -1,13 +1,16 @@
 <?php
 /*
 Plugin Name: MBOP remover
-Plugin URI: https://github.com/jeanphilipperuijs/mbop
+Plugin URI: /mbop
 Description: Delete current user meta's 'meta-box-order_page'
 Version: 0.2
 Author: Jean-Philippe Ruijs
-Author URI: https://github.com/jeanphilipperuijs/
+Author URI: https://github.com/MPAT-eu
 License: GPL2
+Text Domain: mbop-remover
+Domain Path: /languages
 */
+load_plugin_textdomain('mbop-remover', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 class MBOP
 {
@@ -19,8 +22,10 @@ class MBOP
     {
         $current_user = wp_get_current_user();
         echo '<div id="deleteMetaBoxOrderPage">
-<h2>'.'Page fixer'.'</h2>
-<h3>'.$current_user->display_name.'\'s '.$this::MK.'</h3>';
+<h2>'.__('Page fixer', 'mbop-remover').'</h2>
+<h3>'.
+/*.$current_user->display_name.'\'s '.*/
+        sprintf(__('cleaner %1$s', 'mbop-remover'), $this::MK).'</h3>';
         $uid = $current_user->ID;
         $jsu = json_encode($current_user);
         $mbop  = get_user_meta($uid, $this::MK);
@@ -29,8 +34,9 @@ class MBOP
         if (isset( $_POST[$this::PK] )) {
             $this->head();
             echo '<body>
-<p>'.$this::MK.' deleted</p>
-<p>refreshing in '.$this->rt. ' seconds</p>';
+<p><strong>'.
+            $this::MK.__(' deleted', 'mbop-remover').', '.__('refreshing in ', 'mbop-remover').$this->rt. __(' seconds', 'mbop-remover').
+            '</strong></p>';
             echo $this->ta($jso);
             delete_user_meta($uid, $this::MK);
         } else {
@@ -43,14 +49,15 @@ class MBOP
 
     function template()
     {
+        
         $url_path = trim($_SERVER['REQUEST_URI'], '/');
-        if (substr($url_path,-4) === 'mbop' ) {
+        if (substr($url_path, -4) === 'mbop') {
             echo "<html>\n";
-            do_shortcode('[mbop_remover]');
+            do_shortcode('[mbop_remover_sc]');
             echo "</html>\n";
             exit();
         }
-    }    
+    }
 
     function head()
     {
@@ -59,15 +66,19 @@ class MBOP
     
     function html_form_code($jsu, $current_user)
     {
-        echo '
-<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
+        echo '<label for="dts">'.
+        '<p>'.
+        sprintf(__('This will remove the "%1$s" value for user "%2$s" (%3$s), which is generated when having opened a page', 'mbop-remover'),
+        $this::MK,
+        $current_user->display_name,
+        $current_user->user_email).
+        '</p>'.
+'<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
 <input type="text" readonly name="'.$this::PK.'" value="'.$this::MK.'">
-<input id="dts" type="submit" name="'.$this::PK.'" value="Delete">';
+<input id="dts" type="submit" name="'.$this::PK.'" value="'.__('Delete', 'mbop-remover').'">';
         echo $this->ta($this->getjso());
-echo '</form>
-<label for="dts">
-This will remove the "'.$this::MK.'" value for user "'.$current_user->display_name.'" ('.$current_user->user_email.') which is generated when having opened a page
-</label>';
+        echo '</form>
+        </label>';
     }
     function getum()
     {
@@ -95,4 +106,4 @@ This will remove the "'.$this::MK.'" value for user "'.$current_user->display_na
 $m = new MBOP();
 
 add_action('wp_loaded', array(&$m,'template'));
-add_shortcode( 'mbop_remover', array(&$m,'deleteMetaBoxOrderPage'));
+add_shortcode('mbop_remover_sc', array(&$m,'deleteMetaBoxOrderPage'));

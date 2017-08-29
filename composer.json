@@ -1,7 +1,7 @@
 {
     "name" : "mbop-remover",
     "description" : "WordPress meta-box cleaner, This will remove the 'meta-box-order_page' value for user which is generated when having opened a page. Accessible via http://[wproot]/mbop",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "license" : "GPL2",
     "authors" : [{
         "name" : "Jean-Philippe Ruijs",
