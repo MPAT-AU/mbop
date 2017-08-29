@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: MBOP remover 0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mbop-remover\n"
 "POT-Creation-Date: 2017-08-29 06:20:14+00:00\n"
-"PO-Revision-Date: 2017-08-29 08:20+0200\n"
+"PO-Revision-Date: 2017-08-29 10:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -25,15 +25,15 @@ msgstr "Supprimer"
 
 #: mbop-remover.php:73
 msgid "This will remove the"
-msgstr "Ceci supprimera le"
+msgstr "Ceci supprimera la valeur"
 
 #: mbop-remover.php:74
 msgid "value for user"
-msgstr "valeur pour l’utilisateur"
+msgstr "pour l'utilisateur"
 
 #: mbop-remover.php:75
 msgid "which is generated when having opened a page"
-msgstr "ce qui est généré lors de l’ouverture d’une page"
+msgstr ", généré lors de l’ouverture d’une page"
 
 #. Plugin Name of the plugin/theme
 msgid "MBOP remover"

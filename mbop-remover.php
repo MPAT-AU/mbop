@@ -5,7 +5,7 @@ Plugin URI: /mbop
 Description: Delete current user meta's 'meta-box-order_page'
 Version: 0.2
 Author: Jean-Philippe Ruijs
-Author URI: https://github.com/jeanphilipperuijs/
+Author URI: https://github.com/MPAT-eu
 License: GPL2
 Text Domain: mbop-remover
 Domain Path: /languages
