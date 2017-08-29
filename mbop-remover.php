@@ -22,8 +22,10 @@ class MBOP
     {
         $current_user = wp_get_current_user();
         echo '<div id="deleteMetaBoxOrderPage">
-<h2>'._e('Page fixer','mbop-remover').'</h2>
-<h3>'.$current_user->display_name.'\'s '.$this::MK.'</h3>';
+<h2>'.__('Page fixer', 'mbop-remover').'</h2>
+<h3>'.
+/*.$current_user->display_name.'\'s '.*/
+        sprintf(__('cleaner %1$s', 'mbop-remover'), $this::MK).'</h3>';
         $uid = $current_user->ID;
         $jsu = json_encode($current_user);
         $mbop  = get_user_meta($uid, $this::MK);
@@ -32,8 +34,9 @@ class MBOP
         if (isset( $_POST[$this::PK] )) {
             $this->head();
             echo '<body>
-<p>'.$this::MK.' deleted</p>
-<p>refreshing in '.$this->rt. ' seconds</p>';
+<p><strong>'.
+            $this::MK.__(' deleted', 'mbop-remover').', '.__('refreshing in ', 'mbop-remover').$this->rt. __(' seconds', 'mbop-remover').
+            '</strong></p>';
             echo $this->ta($jso);
             delete_user_meta($uid, $this::MK);
         } else {
@@ -48,13 +51,13 @@ class MBOP
     {
         
         $url_path = trim($_SERVER['REQUEST_URI'], '/');
-        if (substr($url_path,-4) === 'mbop' ) {
+        if (substr($url_path, -4) === 'mbop') {
             echo "<html>\n";
             do_shortcode('[mbop_remover_sc]');
             echo "</html>\n";
             exit();
         }
-    }    
+    }
 
     function head()
     {
@@ -63,16 +66,19 @@ class MBOP
     
     function html_form_code($jsu, $current_user)
     {
-        echo '
-<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
+        echo '<label for="dts">'.
+        '<p>'.
+        sprintf(__('This will remove the "%1$s" value for user "%2$s" (%3$s), which is generated when having opened a page', 'mbop-remover'),
+        $this::MK,
+        $current_user->display_name,
+        $current_user->user_email).
+        '</p>'.
+'<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
 <input type="text" readonly name="'.$this::PK.'" value="'.$this::MK.'">
 <input id="dts" type="submit" name="'.$this::PK.'" value="'.__('Delete', 'mbop-remover').'">';
         echo $this->ta($this->getjso());
-echo '</form>
-<label for="dts">'.
-__('This will remove the','mbop-remover').' "'.$this::MK.'" '.
-__('value for user','mbop-remover').' "'.$current_user->display_name.'" ('.$current_user->user_email.') '.
-__('which is generated when having opened a page','mbop-remover').'</label>';
+        echo '</form>
+        </label>';
     }
     function getum()
     {
