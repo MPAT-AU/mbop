@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: MBOP remover 0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mbop\n"
 "POT-Creation-Date: 2017-08-30 12:11:22+00:00\n"
-"PO-Revision-Date: 2017-08-30 14:12+0200\n"
+"PO-Revision-Date: 2017-08-30 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -49,7 +49,7 @@ msgstr "Verwijder"
 
 #. Plugin Name of the plugin/theme
 msgid "MBOP remover"
-msgstr "MBOP verwijdereaar"
+msgstr "MBOP verwijderaar"
 
 #. Plugin URI of the plugin/theme
 msgid "/mbop"
