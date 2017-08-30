@@ -10,8 +10,6 @@ License: GPL2
 Text Domain: mbop-remover
 Domain Path: /languages
 */
-load_plugin_textdomain('mbop-remover', false, basename( dirname( __FILE__ ) ) . '/languages' );
-
 class MBOP
 {
     const PK = 'mbop_submitted';
@@ -20,6 +18,7 @@ class MBOP
 
     function deleteMetaBoxOrderPage()
     {
+        load_plugin_textdomain('mbop-remover', false, basename( dirname( __FILE__ ) ) . '/languages' );
         $current_user = wp_get_current_user();
         echo '<div id="deleteMetaBoxOrderPage">
 <h2>'.__('Page fixer', 'mbop-remover').'</h2>

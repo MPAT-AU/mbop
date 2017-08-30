@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MBOP remover 0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mbop\n"
-"POT-Creation-Date: 2017-08-29 10:11:45+00:00\n"
-"PO-Revision-Date: 2017-08-29 12:19+0200\n"
+"POT-Creation-Date: 2017-08-30 12:11:22+00:00\n"
+"PO-Revision-Date: 2017-08-30 14:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,37 +15,37 @@ msgstr ""
 "X-Generator: Poedit 2.0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mbop-remover.php:25
+#: mbop-remover.php:24
 msgid "Page fixer"
 msgstr "Réparateur de page"
 
-#: mbop-remover.php:28
+#: mbop-remover.php:27
 msgid "cleaner %1$s"
 msgstr "Nettoyeur \"%1$s\""
 
-#: mbop-remover.php:38
+#: mbop-remover.php:37
 msgid " deleted"
 msgstr " supprimé"
 
-#: mbop-remover.php:38
+#: mbop-remover.php:37
 msgid "refreshing in "
 msgstr "rechargement de la page dans "
 
-#: mbop-remover.php:38
+#: mbop-remover.php:37
 msgid " seconds"
 msgstr " secondes"
 
-#: mbop-remover.php:72
-msgid "Delete"
-msgstr "Supprimer"
-
-#: mbop-remover.php:76
+#: mbop-remover.php:70
 msgid ""
 "This will remove the \"%1$s\" value for user \"%2$s\" (%3$s), which is "
 "generated when having opened a page"
 msgstr ""
-"Ceci supprimera l'objet \"%1$s\" pour l'utilisateur \"%2$s\" (%3$s) , "
-"généré lors de l’ouverture d’une page"
+"Ceci supprimera l'objet \"%1$s\" pour l'utilisateur \"%2$s\" (%3$s) , généré "
+"lors de l’ouverture d’une page"
+
+#: mbop-remover.php:77
+msgid "Delete"
+msgstr "Supprimer"
 
 #. Plugin Name of the plugin/theme
 msgid "MBOP remover"
