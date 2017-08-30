@@ -48,7 +48,6 @@ class MBOP
 
     function template()
     {
-        
         $url_path = trim($_SERVER['REQUEST_URI'], '/');
         if (substr($url_path, -4) === 'mbop') {
             echo "<html>\n";
